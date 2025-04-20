@@ -1,0 +1,145 @@
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Start from the top */
+  align-items: center;      /* Center horizontally */
+  height: 100vh;            /* Full viewport height */
+  text-align: center;       /* Center text */
+  background-color: red;
+  overflow: auto;           /* Allow scrolling if content overflows */
+}
+
+.pokemon-header-container {
+  background-color: #e60000;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  width: auto; /* Allow the container to expand based on its content */
+  max-width: 100%; /* Prevent the container from expanding beyond the viewport */
+}
+
+/* Header text style */
+.pokemon-header {
+    font-family: 'Pokemon Solid', sans-serif; /* Optional: you can add a Pokémon font */
+    font-size: 50px;
+    color: #fff; /* White text color */
+    text-transform: uppercase; /* Make header text uppercase */
+    letter-spacing: 4px; /* Add spacing between letters for a fun effect */
+    text-shadow: 2px 2px 10px #ffcc00, -1px -1px 5px #ffcc00, 1px -1px 5px #ffcc00, -1px 1px 5px #ffcc00; /* Yellow text shadow */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .list-container {
+    padding: 20px;
+  }
+  
+  .pagination-controls {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+.string-list {
+  font-family: 'Pokemon Solid', 'Arial', sans-serif;  /* Pokémon font for that playful feel */
+  font-size: 28px;  /* Larger font for more prominence */
+  color: #f8f8f8;  /* Soft off-white color for the text */
+  text-align: center;  /* Center the text */
+  margin-top: 20px;  /* Adds space above */
+  letter-spacing: 2px;  /* Slight letter spacing for a more bold feel */
+  text-transform: uppercase;  /* Make all text uppercase for a bold, energetic vibe */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);  /* Glowy shadow effect for Pokémon style */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;  /* Smooth transitions for hover effect */
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;  /* Center the links horizontally */
+  gap: 30px;  /* More space between the links */
+  margin: 30px 0;  /* Space above and below the links */
+}
+
+a, button {  /* Target links only within the links-container */
+  text-decoration: none;
+  color: #071772;
+  background-color: #ffffff;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: 3px solid #071772;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin: 10px;
+  white-space: nowrap; /* Prevents text from wrapping onto multiple lines */
+}
+
+button {
+  background-color: #ffffff;
+}
+
+a:hover, button:hover {  /* Hover effect only for links in links-container */
+  color: #ffffff;
+  background-color: #071772;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(7, 23, 114, 0.8);
+}
+
+/* Style for the <a> elements inside the .moves class */
+.moves a {
+  text-decoration: none;  /* Remove underline from links */
+  color: #071772;  /* Base color set to deep blue */
+  font-family: 'Pokemon Solid', sans-serif;  /* Pokémon font for consistency */
+  font-size: 32px;  /* Larger font size for better visibility */
+  font-weight: bold;  /* Make the text bold */
+  padding: 15px 30px;  /* Increase padding for larger clickable area */
+  border: 3px solid #071772;  /* Border color matches the base color */
+  border-radius: 20px;  /* More rounded corners */
+  transition: all 0.3s ease;  /* Smooth transition for hover and active effects */
+  display: block;  /* Ensures each link is treated as a block, allowing vertical spacing */
+  margin-bottom: 15px;  /* Adds space between the links vertically */
+}
+
+.moves a:hover {  /* Hover effect only for links in the moves class */
+  color: #ffffff;  /* Change text color to white when hovered */
+  background-color: #071772;  /* Deep blue background on hover */
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+  box-shadow: 0 0 15px rgba(7, 23, 114, 0.8);  /* Glowing effect on hover with the same blue */
+}
+
+.moves-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(5, auto);  /* 5 rows */
+  gap: 1rem;
+  margin: 20px 0;
+}
+
+.move-tile {
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-family: 'Press Start 2P', sans-serif;
+  transition: transform 0.2s;
+}
+
+.move-tile a {
+  color: #3b4cca; /* Pokémon blue */
+  text-decoration: none;
+}
+
+.move-tile:hover {
+  transform: scale(1.05);
+}

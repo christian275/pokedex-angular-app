@@ -1,0 +1,39 @@
+<div class="pokemon-info">
+    <div class="pokemon-header-container">
+        <h1 class="pokemon-header">{{pokemonName}} - {{pokedexNumber}}</h1>
+        <div class="string-list">
+            <span *ngFor="let item of types; let i = index">
+              {{ item }}<span *ngIf="i < types.length - 1"> and </span>
+            </span>
+            <span> type</span>
+        </div>
+        <div class="links-container">
+            <button type="button" (click)="navigateToPokemonWeaknessesAndStrengths()">Strengths & Weaknesses</button>
+            <button type="button" (click)="navigateToPokemonRegions()">Wild Encounter Areas</button>
+            <button type="button" (click)="navigateToPokemonEvolutionChain()">Evolution Chain</button>
+        </div>
+        <div class="pokemon-image-container" (click)="toggleImage()">
+            <img [src]="currentImgUrl" alt="Pokemon Image" style="cursor: pointer;" />
+        </div>
+        <h2 class="pokemon-header">Moves</h2>
+        <!-- Grid container for paginated moves -->
+        <div class="moves-grid">
+            <div *ngFor="let item of pagedItems" class="move-tile">
+                <a [routerLink]="['/move-info', item]">{{ item }}</a>
+            </div>
+        </div>
+        <!-- Pagination controls -->
+        <div class="pagination-controls">
+            <button (click)="goToPage(1)" [disabled]="currentPage === 1">First</button>
+            <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+        
+            <!-- Dynamically generate page buttons -->
+            <button *ngFor="let page of pages" (click)="goToPage(page)" [class.active]="currentPage === page">
+            {{ page }}
+            </button>
+        
+            <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+            <button (click)="goToPage(totalPages)" [disabled]="currentPage === totalPages">Last</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full viewport height */
+  text-align: center;       /* Center text */
+  background-color: red;
+}
+
+/* Style for the container with red background */
+.pokemon-header-container {
+  background-color: #e60000; /* Keep that bold red */
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Type section for regions */
+.type-section {
+  background-color: #ef5350;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Verdana', sans-serif;
+  color: #333;
+  margin-top: 20px;
+
+  /* Allow enough space for a 3-column grid */
+  width: 100%;
+  max-width: 960px; /* or higher */
+}
+
+/* Style for each region (fun Pokémon look) */
+.type-section p {
+  background-color: #ffcc00;  /* Pikachu yellow */
+  color: #1a1a1a;  /* Dark text */
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 30px; /* Rounded corners for a more playful look */
+  margin: 10px 0;
+  text-transform: capitalize;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for each region */
+.type-section p:hover {
+  background-color: #ffb300;  /* A bit darker yellow */
+  transform: scale(1.05); /* Slightly enlarge when hovering */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);  /* Stronger shadow effect */
+  color: white; /* Change text to white on hover */
+}
+
+/* Soft Pokémon-themed blue gradient h2 */
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Press Start 2P', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(45deg, #a3d5ff, #7eb8f5, #5f9df7); /* Blue gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Required for WebKit to honor text gradient */
+  padding: 15px 0;
+  margin: 0;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* Optional subtle hover effect */
+h2:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(163, 213, 255, 0.3), 0 0 18px rgba(126, 184, 245, 0.4);
+}
+
+/* Grid layout for regions */
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, max-content)); /* Use content width */
+  justify-content: center; /* Center the whole grid */
+  gap: 20px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Optional: remove flex styling that was forcing centering if it’s not needed */
+.region-item {
+  display: contents; /* Flatten container so <p> behaves naturally */
+}
+
+.region-item p {
+  background-color: #ffcc00;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+  cursor: pointer;
+  width: auto; /* Let it size to its content */
+  text-align: center;
+  white-space: nowrap; /* Prevent multi-line wrapping if you want consistent button-like look */
+}
+
+.region-item p:hover {
+  background-color: #ffb300;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .region-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .region-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 8px 16px;
+  background-color: #2196f3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination-controls button:disabled {
+  background-color: #90caf9;
+  cursor: default;
+}
+
+.pagination-controls span {
+  font-weight: bold;
+  color: #fff;
+  align-self: center;
+}

@@ -1,0 +1,30 @@
+<div class="pokemon-info">
+    <div class="pokemon-header-container">
+      <h2>Evolution Chain(s)</h2>
+    </div> 
+  
+    <div *ngIf="isLoading" class="loading-message">
+      Loading Evolution Chain data...
+    </div>
+  
+    <div *ngIf="!isLoading" class="type-section">
+        <div *ngFor="let chain of paginatedChains" class="evo-row">
+          <div class="evo-step" *ngFor="let pokemon of chain; let i = index">
+            <div class="poke-card" (click)="goToPokemonInfo(pokemon.name)">
+                <img [src]="pokemon.imageUrl" [alt]="pokemon.name" />
+                <div class="poke-name">{{ pokemon.name | titlecase }}</div>
+              </div>
+            <div class="arrow" *ngIf="i < chain.length - 1">
+              ➡️
+            </div>
+          </div>
+        </div>
+      
+        <!-- Pagination Controls -->
+        <div class="pagination-controls" *ngIf="totalPages > 1">
+          <button (click)="prevPage()" [disabled]="currentPage === 0">⬅️ Prev</button>
+          <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next ➡️</button>
+        </div>
+      </div>
+</div>

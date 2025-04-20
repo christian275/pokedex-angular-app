@@ -1,0 +1,67 @@
+/* Container with a fixed height background image */
+.background-container {
+    background-image: url('../../assets/images/Pokedex_Background.jpg');
+    background-size: 800px 1150px;    /* Fixed width and height for the background image (in pixels) */
+    background-position: center center; /* Center the background image in the container */
+    background-repeat: no-repeat;    /* Prevent the background from repeating */
+    
+    height: 100vh;                    /* Full viewport height */
+    width: 100%;                      /* Full width of the container */
+    position: relative;               /* To position content relative to this container */
+    overflow: auto;                   /* Allow scrolling if the content overflows */
+}
+/* Content section where the search box will go */
+.content {
+    position: absolute;              /* Position the content absolutely within the background */
+    top: 50%;                        /* Position from the top */
+    left: 50%;                       /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the content perfectly */
+    display: flex;                   /* Use flexbox to center content inside the content */
+    justify-content: center;         /* Center horizontally */
+    align-items: center;             /* Center vertically */
+    width: 80%;                      /* Content section width will resize with window */
+    max-width: 600px;                /* Maximum width for the content section */
+    padding: 20px;
+    box-sizing: border-box;          /* Include padding in width/height calculations */
+}
+.search-container {
+    width: 100%;                    /* Resize width of the search box container */
+    max-width: 500px;              /* Maximum width for the search box */
+    padding: 10px;                 /* Optional: add padding for the container */
+    text-align: center;            /* Center content inside */
+}
+/* Styling the search input field to make it bigger */
+.search-bar {
+    width: 100%;                   /* Make the input field take up the full width of its container */
+    padding: 15px;                 /* Add padding for a larger search box */
+    font-size: 16px;               /* Adjust the font size for better visibility */
+    border: 2px solid #ccc;        /* Border around the search box */
+    border-radius: 25px;           /* Rounded corners */
+    outline: none;                 /* Remove outline on focus */
+    transition: border 0.3s ease;  /* Smooth transition for border on focus */
+    text-align: center;
+    margin-left: -15px;
+  }
+
+  .search-bar:focus {
+    border-color: #4CAF50;         /* Change border color when the search box is focused */
+  }
+
+  /* Styling for the rounded button */
+.search-button {
+    width: 50%;                      /* Make the button take up the full width of its container */
+    padding: 15px;                    /* Add padding for a larger button */
+    background-color: yellow;         /* Yellow background */
+    border-radius: 25px;              /* Rounded corners */
+    font-size: 18px;                  /* Bold font size */
+    font-weight: bold;                /* Make the text bold */
+    color: black;                     /* Black text */
+    margin-top: 20px;                 /* Add space above the button */
+    cursor: pointer;                 /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  /* Change background color on hover */
+  .search-button:hover {
+    background-color: #f1c40f;         /* Slightly darker yellow on hover */
+  }

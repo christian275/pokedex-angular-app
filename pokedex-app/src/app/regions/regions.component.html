@@ -1,0 +1,28 @@
+<div class="pokemon-info">
+    <div class="pokemon-header-container">
+      <h2>Regions</h2>
+    </div> 
+  
+    <div *ngIf="loading" class="loading-message">
+      Loading Region data...
+    </div>
+  
+    <div *ngIf="!loading" class="type-section">
+      <div *ngIf="pagedRegions.length > 0; else noRegions">
+        <div *ngFor="let region of pagedRegions">
+          <p>{{ region }}</p>
+        </div>
+  
+        <!-- Pagination Controls -->
+        <div class="pagination-controls">
+          <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+          <span>Page {{ currentPage }} of {{ totalPages }}</span>
+          <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+        </div>
+      </div>
+  
+      <ng-template #noRegions>
+        <p>This Pokémon does not have any wild encounters.</p>
+      </ng-template>
+    </div>
+  </div>

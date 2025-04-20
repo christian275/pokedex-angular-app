@@ -1,0 +1,65 @@
+<div class="pokemon-info">
+    <div class="pokemon-header-container">
+        <h2>Type Strengths & Weaknesses</h2>
+    </div>
+
+    <div class="string-list">
+        <span *ngFor="let type of types; let i = index">
+            {{ type }}<span *ngIf="i < types.length - 1"> and </span>
+        </span>
+        <span> type</span>
+    </div>
+
+    <!-- Show loading message or spinner while data is loading -->
+    <div *ngIf="loading" class="loading-message">
+        Loading Pokémon type data...
+    </div>
+
+    <!-- Only show this after data is ready -->
+    <div *ngIf="!loading" class="type-section">
+        <div *ngIf="weaknesses_and_strengths.weak_to.length > 0">
+            <div class="type-group">
+                <strong>Weak To:</strong>
+                <div class="type-list">
+                    <span *ngFor="let type of weaknesses_and_strengths.weak_to">{{ type }}</span>
+                </div>
+            </div>
+        </div>
+      
+        <div *ngIf="weaknesses_and_strengths.resistant_to.length > 0">
+            <div class="type-group">
+                <strong>Resistant To:</strong>
+                <div class="type-list">
+                    <span *ngFor="let type of weaknesses_and_strengths.resistant_to">{{ type }}</span>
+                </div>
+            </div>
+        </div>
+      
+        <div *ngIf="weaknesses_and_strengths.immune_to.length > 0">
+            <div class="type-group">
+                <strong>Immune To:</strong>
+                <div class="type-list">
+                    <span *ngFor="let type of weaknesses_and_strengths.immune_to">{{ type }}</span>
+                </div>
+            </div>
+        </div>
+      
+        <div *ngIf="weaknesses_and_strengths.super_effective_to.length > 0">
+            <div class="type-group">
+                <strong>Super Effective Against:</strong>
+                <div class="type-list">
+                    <span *ngFor="let type of weaknesses_and_strengths.super_effective_to">{{ type }}</span>
+                </div>
+            </div>
+        </div>
+      
+        <div *ngIf="weaknesses_and_strengths.not_very_effective_to.length > 0">
+            <div class="type-group">
+                <strong>Not Very Effective Against:</strong>
+                <div class="type-list">
+                    <span *ngFor="let type of weaknesses_and_strengths.not_very_effective_to">{{ type }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
